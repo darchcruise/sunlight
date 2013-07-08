@@ -1,0 +1,26 @@
+<h1>Click on your favorite Legislator:</h1>
+
+<form action="/favorite" method="post">
+  <ul>
+    <% @politicians.each do |legislator| %>
+     <% if legislator.party == "D"  %>
+        <li class="dem">
+      <% elsif legislator.party == "R" %>
+        <li class="rep">
+      <% else  %>
+        <li class="indep">
+      <% end %>
+         <%= legislator.firstname %>
+         <%= legislator.lastname %>,
+         <%= legislator.party %>
+<!--When this form is posted to main.rb, the value of the name attribute will be set as a key in the params. The value of the value attribute will be set to the value in the params hash-->
+        <input type="radio" name="favorite" value="<%=legislator.bioguide_id%>">
+     </li>
+     <% end %>
+  </ul>
+  <button>Submit</button>
+</form>
+
+
+
+

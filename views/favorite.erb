@@ -1,0 +1,14 @@
+<h1>Favorite Legislator</h1>
+
+<ol>
+<% @fav_legislator_description.each do |item| %>
+<li><%= item['first'] %></li>
+<li><%= item['last'] %></li>
+<li><%= item['party'] %></li>
+<li><%= item['phone'] %></li>
+<li><%= item['state'] %></li>
+<li><%= item['twitter_id'] %></li>
+
+<% end %>
+
+</ol>
